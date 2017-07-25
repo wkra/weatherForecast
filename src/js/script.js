@@ -1,60 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-// WEATHER CONTROLLER
-  var weatherController = (function(){
-
-    var Weather = function(city, min, max, curr, icon, alt){
-      this.city = city;
-      this.min = min;
-      this.max = max;
-      this.curr = curr;
-      this.icon = icon;
-      this.alt = alt;
-    }
-
-    var data = [];
-    data[0] = new Weather ('Warsaw', 17, 21, 18, 'lr', "Light rain");
-    data[1]= new Weather ('Los Angeles', 19, 27, 25, 'c', "Clear");
-    data[2] = new Weather ('London', 14, 23, 16, 'hr', "Heavy Rain");
-    data[3] = new Weather ('Paris', 14, 23, 16, 's', "Showers");
-    data[4] = new Weather ('Madrid', 18, 31, 28, 'lc', "Light Cloud");
-    data[5] = new Weather ('Oslo', 16, 23, 17, 'hc', "Heavy Cloud");
-    data[6] = new Weather ('Sydney', 11, 19, 13, 't', "Heavy Cloud");
-
-
-      return{
-        testing: function (){
-          console.log(data);
-        },
-
-      getDataFromSerwer: function(){
-        var weatherUrl = 'https://www.metaweather.com/api/location/44418/' ;
-//        var weatherUrl = 'api.openweathermap.org/data/2.5/forecast?id=524901&APPID=1111111111 ' ;
-//        var weatherUrl = 'https://api.github.com/users/jeresig' ;
-//                var weatherUrl = 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts%7Cpageimages&format=json&exintro=&titles=Cairns%20Customs%20House&piprop=thumbnail&pithumbsize=380&callback=jsonp_1462667223891_5118' ;
-//
-        $.ajax({
-          url: weatherUrl,
-          type: "GET",
-          dataType: 'jsonp',
-          cache: true,
-          success: function (data, status, error) {
-            console.log('success', data);
-          },
-          error: function (data, status, error) {
-            console.log('error', data, status, error);
-          }
-        });
-//
-
-      },
-
-        getData: function(){
-          return data;
-        }
-      }
-    })();
-  // END WEATHER CONTROLLER
-
   // UI CONTROLLER
   var UIController = (function(){
 
@@ -70,23 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     return {
-    getDOMstrings: function(){
-      return DOMstrings;
-    },
-    addWheatherBox: function(addObj){
-      var html = '<div class="section--item"><div class="weather-box"><div class="weather-box--el weather-box--el__temp"><div class="temp--el temp--el__min"><span><b>Min:</b> %min% &#176;C</span></div><div class="temp--el temp--el__max"><span><b>Max:</b> %max% &#176;C</span></div></div><div class="weather-box--el weather-box--el__icon"><img src="https://www.metaweather.com/static/img/weather/png/64/%icon%.png" alt="%alt%"></div><div class="weather-box--el weather-box--el__city"> <span>%city%</span></div><div class="weather-box--el weather-box--el__curr-temp"><span>%curr% &#176;C</span></div></div></div>';
+      getDOMstrings: function(){
+        return DOMstrings;
+      },
+      addWheatherBox: function(addObj){
+        var html = '<div class="section--item"><div class="weather-box"><div class="weather-box--el weather-box--el__temp"><div class="temp--el temp--el__min"><span><b>Min:</b> %min% &#176;C</span></div><div class="temp--el temp--el__max"><span><b>Max:</b> %max% &#176;C</span></div></div><div class="weather-box--el weather-box--el__icon"><img src="https://www.metaweather.com/static/img/weather/png/64/%icon%.png" alt="%alt%"></div><div class="weather-box--el weather-box--el__city"> <span>%city%</span></div><div class="weather-box--el weather-box--el__curr-temp"><span>%curr% &#176;C</span></div></div></div>';
 
-      // replace placeholder text
-      var newHtml = html.replace('%min%', addObj.min);
-      newHtml = newHtml.replace('%max%', addObj.max);
-      newHtml = newHtml.replace('%icon%', addObj.icon);
-      newHtml = newHtml.replace('%ialt%', addObj.alt);
-      newHtml = newHtml.replace('%city%', addObj.city);
-      newHtml = newHtml.replace('%curr%', addObj.curr);
+        // replace placeholder text
+        var newHtml = html.replace('%min%', addObj.min);
+        newHtml = newHtml.replace('%max%', addObj.max);
+        newHtml = newHtml.replace('%icon%', addObj.icon);
+        newHtml = newHtml.replace('%ialt%', addObj.alt);
+        newHtml = newHtml.replace('%city%', addObj.city);
+        newHtml = newHtml.replace('%curr%', addObj.curr);
 
-      // insert HTML into DOM
-      $(".section--item__plus").before(newHtml);
-    },
+        // insert HTML into DOM
+        $(".section--item__plus").before(newHtml);
+      },
       printStartData: function(startObj){
         for (i=0; i < startObj.length; i++)
           this.addWheatherBox(startObj[i]);
@@ -95,6 +39,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
   })();
   // END UI CONTROLLER
+
+  // WEATHER CONTROLLER
+  var weatherController = (function(UIController){
+
+    var Weather = function(city, min, max, curr, icon, alt){
+      this.city = city;
+      this.min = min;
+      this.max = max;
+      this.curr = curr;
+      this.icon = icon;
+      this.alt = alt;
+    }
+
+    var data = [];
+
+
+
+      return{
+        testing: function (){
+          console.log(data);
+        },
+
+      getDataFromSerwer: function(url){
+        var self = this;
+        var weatherUrl = url;
+
+        $.ajax({
+          url: weatherUrl,
+          type: "GET",
+//          dataType: 'jsonp',
+          cache: true,
+          success: function (data, status, error) {
+            self.getValuesFromData(data);
+          },
+          error: function (data, status, error) {
+            console.log('error', data, status, error);
+          }
+        });
+
+        return data;
+
+      },
+        getValuesFromData: function(data){
+          var city = data.title;
+          var min = this.roundValues(data.consolidated_weather[0].min_temp);
+          var max = this.roundValues(data.consolidated_weather[0].max_temp);
+          var curr = this.roundValues(data.consolidated_weather[0].the_temp);
+          var icon = data.consolidated_weather[0].weather_state_abbr;
+          var alt = data.consolidated_weather[0].weather_state_name;
+
+          var newWeather = new Weather(city, min, max, curr, icon, alt);
+          console.log(newWeather);
+
+          return UIController.addWheatherBox(newWeather);
+        },
+
+        roundValues: function(val){
+          return Math.round(val);
+        },
+
+        getData: function(){
+          return data;
+        }
+      }
+  })(UIController);
+  // END WEATHER CONTROLLER
+
+
 
   // GLOBAL APP CONTROLLER
   var controller = (function(weatherController, UIController){
@@ -110,8 +122,15 @@ document.addEventListener("DOMContentLoaded", function () {
     return {
       init: function(){
         console.log("App has started");
-        UIController.printStartData(data);
-        weatherController.getDataFromSerwer();
+
+//        UIController.printStartData(data);
+        weatherController.getDataFromSerwer('https://crossorigin.me/https://www.metaweather.com/api/location/2487956/');
+        weatherController.getDataFromSerwer('https://crossorigin.me/https://www.metaweather.com/api/location/44418/');
+        weatherController.getDataFromSerwer('https://crossorigin.me/https://www.metaweather.com/api/location/523920/');
+        weatherController.getDataFromSerwer('https://crossorigin.me/https://www.metaweather.com/api/location/615702/');
+        weatherController.getDataFromSerwer('https://crossorigin.me/https://www.metaweather.com/api/location/766273/');
+        weatherController.getDataFromSerwer('https://crossorigin.me/https://www.metaweather.com/api/location/1105779/');
+        weatherController.getDataFromSerwer('https://crossorigin.me/https://www.metaweather.com/api/location/1118370/');
 //        setupEventListeners();
       }
     }
