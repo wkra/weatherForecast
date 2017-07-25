@@ -1,0 +1,106 @@
+@keyframes {
+  0% { }
+  100% { } }
+
+body, html {
+  height: 100%;
+  background-color: white; }
+
+.section {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap; }
+
+.section--item {
+  background-color: #f6f6f6;
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  margin: 20px;
+  line-height: 250px;
+  border-radius: 20px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 10px 10px 10px #000;
+  box-shadow: 0px 0px 20px 0px #eee, inset 0px 0px 2px 0 #bdbdbd; }
+
+.header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap; }
+
+.header--item {
+  -ms-flex: 1 100%;
+      flex: 1 100%;
+  text-align: left;
+  margin: 20px; }
+
+.weather-box {
+  height: 250px;
+  width: 250px;
+  line-height: normal; }
+
+.weather-box--el {
+  padding-top: 20px; }
+
+.weather-box--el__temp {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 12px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 15px; }
+
+.weather-box--el__curr-temp {
+  font-size: 20px;
+  font-weight: bold; }
+
+.footer {
+  text-align: left;
+  background-color: #f6f6f6;
+  margin: 20px;
+  margin-bottom: -2px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 10px 10px 10px #000;
+  box-shadow: 0px 0px 20px 0px #eee, inset 0px 0px 2px 0 #bdbdbd;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 20px 10px;
+  color: #8b8b8b;
+  font-size: 12px; }
+
+@media (min-width: 768px) {
+  .header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-direction: row;
+        flex-direction: row; }
+  .header--item {
+    -ms-flex: 1;
+        flex: 1;
+    text-align: center; }
+  .header--item__add-city {
+    text-align: left; } }

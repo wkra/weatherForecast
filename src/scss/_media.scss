@@ -1,0 +1,38 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+
+// Medium devices (tablets, 768px and up)
+//@media only screen and (min-width: 768px), only screen and (min-device-width: 768px){
+@media (min-width: 768px) {
+
+//  .section {
+//    justify-content: space-around;
+//    flex-direction: row;
+//  }
+
+  .header {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+
+  }
+  .header--item {
+    flex:1;
+    text-align: center;
+  }
+  .header--item__add-city {
+    text-align: left;
+  }
+
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px){
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px){
+
+}
