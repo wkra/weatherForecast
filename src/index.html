@@ -23,9 +23,9 @@
           <div class="header--item header--item__add-city">
             <div class="input-group input-group-sm">
               <span class="input-group-addon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type name of city">
+              <input type="text" class="form-control add-city-input" placeholder="Type name of city">
           </div>
-            <button type="button" class="btn btn-default">Add city</button>
+            <button type="button" class="btn btn-default add-city-btn">Add city</button>
           </div>
           <div class="header--item">
             <p>HEADER CONTAINER</p>
@@ -36,45 +36,16 @@
     </header>
     <section>
       <div class="container">
-        <div class="section">
-          <div class="section--item">
-            <div class="weather-box">
-              <div class="weather-box--el weather-box--el__temp">
-                <div class="temp--el temp--el__min">
-                  <span><b>Min:</b> %% &#176;C</span>
-                </div>
-                <div class="temp--el temp--el__min">
-                  <span><b>Max:</b> %% &#176;C</span>
-                </div>
-              </div>
-              <div class="weather-box--el weather-box--el__icon">
-                <img src="https://www.metaweather.com/static/img/weather/png/64/lr.png" alt="light rain">
-              </div>
-              <div class="weather-box--el weather-box--el__city">
-                <span>City</span>
-              </div>
-              <div class="weather-box--el weather-box--el__curr-temp">
-                <span>%% &#176;C</span>
-              </div>
-            </div>
-          </div>
-          <div class="section--item">
-            <i class="fa fa-image fa-2x" aria-hidden="true"></i>
-          </div>
-          <div class="section--item">
-            <i class="fa fa-image fa-2x" aria-hidden="true"></i>
-          </div>
-          <div class="section--item">
-            <i class="fa fa-image fa-2x" aria-hidden="true"></i>
-          </div>
+        <div class="section weather-box-container">
 
-          <div class="section--item"><i class="fa fa-plus fa-1x" aria-hidden="true"></i></div>
+          <div class="section--item section--item__plus"><i class="fa fa-plus fa-1x" aria-hidden="true"></i></div>
         </div>
     </div>
     </section>
     <footer>
+      <div class="footer">
       <div class="container">
-        <div class="footer"><p>Weather from: www.metaweather.com</p>
+        <p>Weather from: www.metaweather.com</p>
         </div>
       </div>
     </footer>
