@@ -31,17 +31,21 @@ $section--item--val: 250px;
 }
 .header {
   display:flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  flex-flow: wrap;
+  flex-flow: column-reverse wrap;;
 }
 
 .header--item {
   flex:1 100%;
-  text-align: left;
+  text-align: center;
   margin: 20px;
+  img {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 .weather-box{
   height: $section--item--val;
@@ -61,11 +65,19 @@ $section--item--val: 250px;
   justify-content: space-around;
   align-items: center;
   padding: 15px;
-
 }
 .weather-box--el__curr-temp{
   font-size: 20px;
   font-weight: bold;
+}
+.weather-box--el__city{
+  font-weight: bold;
+}
+.weather-box--el__icon{
+  img {
+  animation: iconAnimation 5s infinite;
+  animation-timing-function: linear;
+  }
 }
 .footer{
   text-align: center;
@@ -74,12 +86,16 @@ $section--item--val: 250px;
   color: #8b8b8b;
   font-size: 12px;
   padding-top: 20px;
+
 }
 
 .add-weather {
   p {
     margin:20px;
   }
+}
+.message--p {
+  margin-left: 10px;
 }
 .add-city--message{
   display:flex;

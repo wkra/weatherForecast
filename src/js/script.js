@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
       getDOMstrings: function(){
         return DOMstrings;
       },
-      addWheatherBox: function(addObj){
+      addWheatherBox: function(addObj, predef){
         var html = '<div class="section--item"><div class="weather-box"><div class="weather-box--el weather-box--el__temp"><div class="temp--el temp--el__min"><span><b>Min:</b> %min% &#176;C</span></div><div class="temp--el temp--el__max"><span><b>Max:</b> %max% &#176;C</span></div></div><div class="weather-box--el weather-box--el__icon"><img src="https://www.metaweather.com/static/img/weather/png/64/%icon%.png" alt="%alt%"></div><div class="weather-box--el weather-box--el__city"> <span>%city%</span></div><div class="weather-box--el weather-box--el__curr-temp"><span>%curr% &#176;C</span></div></div></div>';
 
         // replace placeholder text
@@ -146,6 +146,10 @@ document.addEventListener("DOMContentLoaded", function () {
         newHtml = newHtml.replace('%ialt%', addObj.alt);
         newHtml = newHtml.replace('%city%', addObj.city);
         newHtml = newHtml.replace('%curr%', addObj.curr);
+
+        if (predef === "predef") {
+          newHtml = newHtml.replace('section--item','section--item alert alert-info' );
+        }
 
         // insert HTML into DOM
         $(".section--item__plus").before(newHtml);
@@ -223,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // get data from serwer with function callback to add new weather forecast
 
-    var locationWithWoeid = function (data){
+    var locationWithWoeid = function (data, predef){
 
       weatherController.getDataFromSerwer(data, function(data){
         // callback function for waiting for data
@@ -233,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var valuesFromData = weatherController.getValuesFromData(data);
 
         // add weather forecast
-        UIController.addWheatherBox(valuesFromData);
+          UIController.addWheatherBox(valuesFromData, predef);
 
           if (weatherController.getLoadingFlag() == weatherController.getStartData().length){
 
@@ -321,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var startDataFunc = function(data){
       for (i=0; i < data.length; i++){
         //        searchLocation(data[i]);
-        locationWithWoeid(data[i]);
+        locationWithWoeid(data[i], "predef");
       }
     };
 
