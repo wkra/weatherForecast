@@ -6,15 +6,11 @@
 //@media only screen and (min-width: 768px), only screen and (min-device-width: 768px){
 @media (min-width: 768px) {
 
-//  .section {
-//    justify-content: space-around;
-//    flex-direction: row;
-//  }
-
   .header {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    flex-flow: wrap;
 
 
   }

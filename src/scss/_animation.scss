@@ -1,4 +1,11 @@
-@keyframes  {
-  0%  {}
-  100%{}
+@keyframes  iconAnimation{
+  $translateX: 0;
+  $translateY: 3px;
+  $rotate: 3deg;
+  0%  {transform: translateX(0) translateY(0) rotate(0)}
+  20%  {transform: translateX(-$translateX) translateY(-$translateY) rotate($rotate)}
+  50%  {transform: translateX(0) translateY(0) rotate(0)}
+  70%  {transform: translateX($translateX)translateY(-$translateY) rotate(-$rotate)}
+  100%  {transform: translateX(0) translateY(0) rotate()}
+
 }
