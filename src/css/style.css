@@ -85,6 +85,20 @@ body, html {
   font-size: 12px;
   padding-top: 20px; }
 
+.add-weather p {
+  margin: 20px; }
+
+.add-city--message {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px; }
+
+.message--spinner {
+  opacity: 0; }
+
+.message--spinner__show {
+  opacity: 1; }
+
 @media (min-width: 768px) {
   .header {
     display: -ms-flexbox;
@@ -97,5 +111,5 @@ body, html {
     -ms-flex: 1;
         flex: 1;
     text-align: center; }
-  .header--item__add-city {
+  .add-city {
     text-align: left; } }
