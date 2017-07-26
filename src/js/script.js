@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (weatherController.getLoadingFlag() == weatherController.getStartData().length){
 
             // print message loading completed
-            UIController.printMessage("Sorry, problem with MethaWeather API. Not alll citys may by loaded.");
+            UIController.printMessage("Sorry, problem with MethaWeather API. Not all cities may by loaded.");
 
             //rem spinner
             UIController.remSpinner();
