@@ -69,11 +69,27 @@ $section--item--val: 250px;
 }
 .footer{
   text-align: center;
-background-color: #333333;
+  background-color: #333333;
   padding: 20px 10px;
   color: #8b8b8b;
   font-size: 12px;
   padding-top: 20px;
+}
+
+.add-weather {
+  p {
+    margin:20px;
+  }
+}
+.add-city--message{
+  display:flex;
+  margin: 20px;
+}
+.message--spinner{
+  opacity: 0;
+}
+.message--spinner__show{
+  opacity: 1;
 }
 
 // IMPORT MEDIA

@@ -20,15 +20,23 @@
     <header>
       <div class="container">
         <div class="header">
-          <div class="header--item header--item__add-city">
+          <div class="header--item add-city">
             <div class="input-group input-group-sm">
               <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control add-city-input" placeholder="Type name of city">
+              <input type="text" class="form-control add-city--input" placeholder="Type name of city">
 
           </div>
-            <p>Search name of city</p>
-            <button type="button" class="btn btn-default search-city-btn">Search city</button>
-            <button type="button" class="btn btn-default add-city-btn" disabled>Add city</button>
+            <div class="add-city--message alert alert-info">
+              <div class="message--spinner message--spinner__show">
+              <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+              </div>
+              <div class="message--p ">
+                <p class="add-city--p">Loading</p>
+              </div>
+            </div>
+
+
+            <button type="button" class="btn btn-primary add-city--button disabled">Add city</button>
           </div>
           <div class="header--item">
             <p>HEADER CONTAINER</p>
