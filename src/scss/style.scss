@@ -25,8 +25,6 @@ $section--item--val: 250px;
   margin: 20px;
   line-height: $section--item--val;
   border-radius: 20px;
-  border: 1px solid #e8e8e8;
-  box-shadow: 10px 10px 10px #000;
   box-shadow: 0px 0px 20px 0px #eee, inset 0px 0px 2px 0 #bdbdbd;
 }
 .header {
@@ -48,14 +46,12 @@ $section--item--val: 250px;
   }
 }
 .weather-box{
-  height: $section--item--val;
-  width: $section--item--val;
   line-height: normal;
 
 }
 
 .weather-box--el{
-  padding-top: 20px;
+  padding-top: 25px;
 
 }
 .weather-box--el__temp {
@@ -74,6 +70,7 @@ $section--item--val: 250px;
   font-weight: bold;
 }
 .weather-box--el__icon{
+  padding-top: 10px;
   img {
   animation: iconAnimation 5s infinite;
   animation-timing-function: linear;
