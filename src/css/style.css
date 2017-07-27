@@ -37,8 +37,6 @@ body, html {
   margin: 20px;
   line-height: 250px;
   border-radius: 20px;
-  border: 1px solid #e8e8e8;
-  box-shadow: 10px 10px 10px #000;
   box-shadow: 0px 0px 20px 0px #eee, inset 0px 0px 2px 0 #bdbdbd; }
 
 .header {
@@ -65,12 +63,10 @@ body, html {
     margin-right: 15px; }
 
 .weather-box {
-  height: 250px;
-  width: 250px;
   line-height: normal; }
 
 .weather-box--el {
-  padding-top: 20px; }
+  padding-top: 25px; }
 
 .weather-box--el__temp {
   display: -ms-flexbox;
@@ -91,9 +87,11 @@ body, html {
 .weather-box--el__city {
   font-weight: bold; }
 
-.weather-box--el__icon img {
-  animation: iconAnimation 5s infinite;
-  animation-timing-function: linear; }
+.weather-box--el__icon {
+  padding-top: 10px; }
+  .weather-box--el__icon img {
+    animation: iconAnimation 5s infinite;
+    animation-timing-function: linear; }
 
 .footer {
   text-align: center;

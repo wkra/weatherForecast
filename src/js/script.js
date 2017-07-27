@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var newHtml = html.replace('%min%', addObj.min);
         newHtml = newHtml.replace('%max%', addObj.max);
         newHtml = newHtml.replace('%icon%', addObj.icon);
-        newHtml = newHtml.replace('%ialt%', addObj.alt);
+        newHtml = newHtml.replace('%alt%', addObj.alt);
         newHtml = newHtml.replace('%city%', addObj.city);
         newHtml = newHtml.replace('%curr%', addObj.curr);
 
