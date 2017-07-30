@@ -44,6 +44,13 @@ $section--item--val: 250px;
     margin-right: 15px;
   }
 }
+
+.header--item__search {
+  order: 2;
+}
+.header--item__brand{
+  order: 1;
+}
 .weather-box{
   line-height: normal;
 
@@ -91,7 +98,10 @@ $section--item--val: 250px;
   }
 }
 .message--p {
-  margin-left: 10px;
+  font-size: 11px;
+  color: #9a9a9a;
+  letter-spacing: 3px;
+  padding-left: 10px;
 }
 .add-city--message{
   display:flex;
