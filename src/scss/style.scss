@@ -33,7 +33,6 @@ $section--item--val: 250px;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  flex-flow: column-reverse wrap;;
 }
 
 .header--item {
@@ -99,10 +98,10 @@ $section--item--val: 250px;
   margin: 20px;
 }
 .message--spinner{
-  opacity: 0;
+  display: none;
 }
 .message--spinner__show{
-  opacity: 1;
+  display: block;
 }
 
 // IMPORT MEDIA

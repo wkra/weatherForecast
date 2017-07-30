@@ -49,9 +49,7 @@ body, html {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-flow: column-reverse wrap;
-      flex-flow: column-reverse wrap; }
+      align-items: center; }
 
 .header--item {
   -ms-flex: 1 100%;
@@ -113,10 +111,10 @@ body, html {
   margin: 20px; }
 
 .message--spinner {
-  opacity: 0; }
+  display: none; }
 
 .message--spinner__show {
-  opacity: 1; }
+  display: block; }
 
 @media (min-width: 768px) {
   .header {
@@ -125,9 +123,7 @@ body, html {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     -ms-flex-direction: row;
-        flex-direction: row;
-    -ms-flex-flow: wrap;
-        flex-flow: wrap; }
+        flex-direction: row; }
   .header--item {
     -ms-flex: 1;
         flex: 1;
