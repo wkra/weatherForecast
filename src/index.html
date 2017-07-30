@@ -20,13 +20,15 @@
     <header>
       <div class="container">
         <div class="header">
-          <div class="header--item add-city">
-            <div class="input-group input-group-sm">
+          <div class="header--item header--item__search add-city">
+            <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control add-city--input" placeholder="Type name of city">
+              <input type="text" class="form-control add-city--input" placeholder="Type name of city"><span class="input-group-btn">
+              <button type="button" class="btn btn-primary add-city--button disabled">Add city</button>
+              </span>
 
           </div>
-            <div class="add-city--message alert alert-info">
+            <div class="add-city--message">
               <div class="message--spinner message--spinner__show">
               <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
               </div>
@@ -35,10 +37,11 @@
               </div>
             </div>
 
-
+<!--
             <button type="button" class="btn btn-primary add-city--button disabled">Add city</button>
+-->
           </div>
-          <div class="header--item">
+          <div class="header--item header--item__brand">
             <img src="https://www.metaweather.com/static/img/weather/png/64/t.png">
             <img src="https://www.metaweather.com/static/img/weather/png/64/lc.png">
             <img src="https://www.metaweather.com/static/img/weather/png/64/c.png">

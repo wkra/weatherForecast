@@ -17,6 +17,12 @@
     flex:1;
     text-align: center;
   }
+  .header--item__search {
+    order: 1;
+  }
+  .header--item__brand{
+    order: 2;
+  }
   .add-city {
     text-align: left;
   }
