@@ -1,38 +1,23 @@
-@import "animation";
-
-
 body, html {
   height: 100%;
   background-color: white;
 }
+h1{
+  font-size: 45px;
+  padding: 40px;
+}
 
 .section {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex-flow: wrap;
   padding-bottom: 50px;
 }
-$section--item--val: 250px;
-.section--item {
 
-  background-color: #f6f6f6;
-  height: $section--item--val;
-  width: $section--item--val;
-  text-align: center;
-  margin: 20px;
-  line-height: $section--item--val;
-  border-radius: 20px;
-  box-shadow: 0px 0px 20px 0px #eee, inset 0px 0px 2px 0 #bdbdbd;
-}
 .header {
   display:flex;
   flex-direction: row-reverse;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  flex-flow: column-reverse wrap;;
 }
 
 .header--item {
@@ -44,52 +29,19 @@ $section--item--val: 250px;
     margin-right: 15px;
   }
 }
-.weather-box{
-  line-height: normal;
 
-}
-
-.weather-box--el{
-  padding-top: 25px;
-
-}
-.weather-box--el__temp {
-  display:flex;
-  flex-wrap: nowrap;
-  font-size: 12px;
-  justify-content: space-around;
-  align-items: center;
-  padding: 15px;
-}
-.weather-box--el__curr-temp{
-  font-size: 20px;
-  font-weight: bold;
-}
-.weather-box--el__city{
-  font-weight: bold;
-}
-.weather-box--el__icon{
-  padding-top: 10px;
-  img {
-  animation: iconAnimation 5s infinite;
-  animation-timing-function: linear;
-  }
-}
 .footer{
+  position:absolute;
+  margin-bottom: 0;
   text-align: center;
   background-color: #333333;
   padding: 20px 10px;
   color: #8b8b8b;
   font-size: 12px;
-  padding-top: 20px;
+  width: 100%;
 
 }
 
-.add-weather {
-  p {
-    margin:20px;
-  }
-}
 .message--p {
   margin-left: 10px;
 }
@@ -98,10 +50,32 @@ $section--item--val: 250px;
   margin: 20px;
 }
 .message--spinner{
-  display: none;
+  opacity: 0;
 }
 .message--spinner__show{
-  display: block;
+  opacity: 1;
+}
+
+.input-group {
+  padding-bottom: 15px;
+}
+.button--message{
+  font-size: 11px;
+  color: #9a9a9a;
+  letter-spacing: 3px;
+  padding-left: 10px;
+}
+//.row {
+//  -moz-column-width: 28em;
+//  -webkit-column-width: 28em;
+//  column-width: 28em;
+//  -moz-column-gap: .5em;
+//  -webkit-column-gap: .5em;
+//  column-gap: .5em;
+//}
+
+.panel-heading {
+  font-weight: bold;
 }
 
 // IMPORT MEDIA

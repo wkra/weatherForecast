@@ -18,58 +18,138 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="header">
-          <div class="header--item add-city">
-            <div class="input-group input-group-sm">
-              <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control add-city--input" placeholder="Type name of city">
 
+
+          <div class="container">
+            <h1><i class="fa fa-user-plus" aria-hidden="true"></i>  User manager</h1>
           </div>
-            <div class="add-city--message alert alert-info">
-              <div class="message--spinner message--spinner__show">
-              <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
-              </div>
-              <div class="message--p ">
-                <p class="add-city--p">Loading</p>
-              </div>
-            </div>
 
 
-            <button type="button" class="btn btn-primary add-city--button disabled">Add city</button>
-          </div>
-          <div class="header--item">
-            <img src="https://www.metaweather.com/static/img/weather/png/64/t.png">
-            <img src="https://www.metaweather.com/static/img/weather/png/64/lc.png">
-            <img src="https://www.metaweather.com/static/img/weather/png/64/c.png">
-            <h1>YOUR WEATHER FORECAST</h1>
-        </div>
-
-        </div>
-      </div>
     </header>
-    <section>
+    <section class="section">
       <div class="container">
-        <div class="section weather-box-container">
 
-          <div class="section--item section--item__plus"><i class="fa fa-plus fa-1x" aria-hidden="true"></i></div>
+        <!-- user list -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">User List</div>
+          <div class="panel-body table-responsive">
+            <table class="table table-striped table-hover ">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Password</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Date of birth</th>
+                  <th>Group</th>
+                </tr>
+              </thead>
+              <tbody class="userListTable">
+              </tbody>
+            </table>
+          </div>
         </div>
-    </div>
+        <!-- end user list -->
+
+        <!--  user manager -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">User manager</div>
+          <div class="panel-body">
+            <form>
+              <div class="input-group">
+                <label>Name</label>
+                <input type="text" class="form-control nameInput" placeholder="Name">
+              </div>
+              <div class="input-group">
+                <label>Password</label>
+                <input type="text" class="form-control passwordInput" placeholder="Password">
+              </div>
+              <div class="input-group">
+                <label>First Name</label>
+                <input type="text" class="form-control firstNameInput" placeholder="First Name">
+              </div>
+              <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control lastNameInput" placeholder="Last Name">
+              </div>
+              <div class="input-group">
+                <label>Date of birth</label>
+                <input type="text" class="form-control dateBirthInput" placeholder="Date of birth">
+              </div>
+              <div class="form-group">
+                <label>Select group:</label>
+                <select class="form-control selectUserInput">
+                </select>
+              </div>
+              <button type="button" class="btn btn-success add-city--button addUserBtn"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add user</button>
+              <button type="button" class="btn btn-primary add-city--button editUserBtn "><i class="fa fa-edit" aria-hidden="true"></i> Edit user</button>
+              <button type="button" class="btn btn-danger add-city--button remUserBtn "><i class="fa fa-minus-circle" aria-hidden="true"></i> Remove user</button>
+              <span class="button--message">*To edit or remove, please select user </span>
+            </form>
+          </div>
+        </div>
+        <!-- end user manager -->
+
+
+        <!-- group list -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">Group List
+
+          </div>
+          <div class="panel-body table-responsive">
+
+
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                </tr>
+              </thead>
+              <tbody class="groupListTable">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end user list -->
+
+        <!--  user manager -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">Group manager</div>
+          <div class="panel-body">
+            <form>
+              <div class="input-group">
+                <label>Name</label>
+                <input type="text" class="form-control groupInput nameGroupInput" placeholder="Name">
+              </div>
+
+              <button type="button" class="btn btn-success add-city--button addGroupBtn"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Group</button>
+              <button type="button" class="btn btn-primary add-city--button editGroupBtn "><i class="fa fa-edit" aria-hidden="true"></i> Edit Group</button>
+              <button type="button" class="btn btn-danger add-city--button remGroupBtn "><i class="fa fa-minus-circle" aria-hidden="true"></i> Remove Group</button>
+              <span class="button--message">*To edit or remove, please select group </span>
+            </form>
+          </div>
+        </div>
+        <!-- end user manager -->
+
+
+      </div><!-- end of conainter -->
     </section>
     <footer>
       <div class="footer">
       <div class="container">
-        <p>Weather from: www.metaweather.com</p>
         <p>created by wkrawiec.pl</p>
         </div>
       </div>
     </footer>
-
+    <!-- sQuery -->
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
      <!-- build:js -->
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
