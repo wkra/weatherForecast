@@ -13,22 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
       this.alt = alt;
     };
 
-    var startData = ["455825", "2379574", "44418", "523920", "1118370", "1105779", "615702"];
-//    var startData = ["Warsaw", "London", "Paris", "Chicago", "Rio de Janeiro", "Tokyo", "Sydney"];
+    // predefined location with woeid
+    var startData = [["523920", "poland"], ["44418", "uk"], ["615702", "france"], ["862592", "norway"], ["721943", "italy"], ["1118370", "japan"], ["753692", "spain"]];
 
     var loadingFlag = 0;
 
     return {
-      testing: function (){
-        console.log(data);
-      },
 
       getLoadingFlag: function(){
         return loadingFlag;
       },
       increaseLoadingFlag: function(){
         loadingFlag++;
-
       },
 
       getDataFromSerwer: function(woeid, callback){
@@ -51,15 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
           },
           error: function (data, status, error) {
-
             //increase loading flag
             weatherController.increaseLoadingFlag();
             console.log('error', data, status, error);
 
             //function callback
             if($.isFunction(callback)) {callback(false);};
-
-
           }
         });
 
@@ -90,9 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
           type: "GET",
           cache: true,
           success: function (data, status, error) {
-
             if($.isFunction(callback)) {
-
               if (data == ""){
 
                 // location not found
@@ -109,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if($.isFunction(callback)) {callback(false);}
           }
         });
-
       },
 
       getStartData: function(){
@@ -147,12 +137,13 @@ document.addEventListener("DOMContentLoaded", function () {
         newHtml = newHtml.replace('%city%', addObj.city);
         newHtml = newHtml.replace('%curr%', addObj.curr);
 
-        if (predef === "predef") {
-          newHtml = newHtml.replace('section--item','section--item alert alert-info' );
+        if (predef !== undefined) {
+          newHtml = newHtml.replace('section--item','section--item flag--' + predef);
         }
 
         // insert HTML into DOM
         $(".section--item__plus").before(newHtml);
+
       },
 
       // print Mesage
@@ -184,7 +175,47 @@ document.addEventListener("DOMContentLoaded", function () {
       $(DOMstrings.addCityBtn).removeClass("disabled");
     },
 
+      // background scroll effect module
+      backgroundScrollEffect: function (startPos, endPos, element){
 
+        // set windows values
+        var windowHeight = jQuery(window).height();
+        var windowScrollPosTop = jQuery(window).scrollTop();
+        var windowScrollPosBottom = windowHeight + windowScrollPosTop;
+        var windowWidth = jQuery(window).width();
+
+        // call function to set position on load
+        myScrollVal(startPos, endPos, element);
+
+        // event listener for scroll
+        $(window).scroll(function(){
+          windowHeight = jQuery(window).height();
+          windowScrollPosTop = jQuery(window).scrollTop();
+          windowScrollPosBottom = windowHeight + windowScrollPosTop;
+          windowWidth = jQuery(window).width();
+
+          // function (start position, end position, element)
+          myScrollVal(startPos, endPos, element);
+        });
+
+      // change background position function
+      function myScrollVal(startValue, endValue, object){
+
+        // set element position
+        var objectOffset = jQuery(object).offset();
+        var objectOffsetTop = objectOffset.top;
+        var objectOffsetBottom = objectOffsetTop + jQuery(object).outerHeight();
+
+        // if element is visible in window
+        if (windowScrollPosBottom > objectOffsetTop && windowScrollPosTop < (objectOffsetTop+$(object).height())){
+
+          // set background position
+          var scrollTop = $(this).scrollTop();
+          $(object).css('background-position', '50%' + Math.round((startValue+(((windowScrollPosBottom-objectOffsetTop)*(endValue-startValue))/(windowHeight+(objectOffsetBottom-objectOffsetTop))))) + '%');
+        };
+      };
+    },
+  // end background scroll module
 
     }
 
@@ -198,14 +229,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var DOMstrings = UIController.getDOMstrings();
 
-
-// new Location
+    // new Location
     var searchLocation = function(cityName){
 
       // search location
       var location = weatherController.locationSearch(cityName, function(data){
         // callback function for waiting for data
-
 
           // location find
           if (data != false){
@@ -217,11 +246,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // location not find
             UIController.printMessage("Location not found.");
 
-            //rem spinner
+            // rem spinner
             UIController.remSpinner();
           }
-
-
         });
     };
 
@@ -244,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // print message loading completed
             UIController.printMessage("You can add city.");
 
-            //rem spinner
+            // rem spinner
             UIController.remSpinner();
 
             // able button
@@ -256,11 +283,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // print message location added
             UIController.printMessage("Location added. You can add more!");
 
-            //rem spinner
+            // rem spinner
             UIController.remSpinner();
           }
-
-
 
         }
         else {
@@ -292,7 +317,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (UIController.getInput() === ""){
         UIController.printMessage("Please type a city name.");
       } else {
-        console.log(UIController.getInput());
         searchLocation(UIController.getInput());
 
         // print message
@@ -317,33 +341,34 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.which === 13){
           startSearch();
         }
-
       })
     };
 
     // show start data
     var startDataFunc = function(data){
       for (i=0; i < data.length; i++){
-        //        searchLocation(data[i]);
-        locationWithWoeid(data[i], "predef");
+        locationWithWoeid(data[i][0], data[i][1]);
       }
     };
 
 
     return {
       init: function(){
-        console.log("App has started");
+//        console.log("App has started");
         setupEventListeners()
         startDataFunc(weatherController.getStartData());
+        UIController.backgroundScrollEffect(-100, 100, 'header');
       }
     }
 
   })(weatherController, UIController);
   // END GLOBAL APP CONTROLLER
 
-
-// end DOMContentLoaded
-
+  // initialization app
   controller.init();
+
+  // end DOMContentLoaded
+
+
 });
 

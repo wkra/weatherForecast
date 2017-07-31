@@ -1,18 +1,172 @@
 @keyframes iconAnimation {
   0% {
-    transform: translateX(0) translateY(0) rotate(0); }
-  20% {
-    transform: translateX(0) translateY(-3px) rotate(3deg); }
-  50% {
-    transform: translateX(0) translateY(0) rotate(0); }
-  70% {
-    transform: translateX(0) translateY(-3px) rotate(-3deg); }
+    transform: scale(1); }
+  60% {
+    transform: scale(1.2); }
   100% {
-    transform: translateX(0) translateY(0) rotate(); } }
+    transform: scale(1); } }
+
+body {
+  background: #f2f2f2;
+  text-align: center; }
+
+.flag--spain, .flag--switzerland, .flag--uk, .flag--japan, .flag--usa, .flag--ireland, .flag--italy, .flag--belgium, .flag--france, .flag--romania, .flag--germany, .flag--russia, .flag--bulgaria, .flag--netherlands, .flag--lithuania, .flag--austria, .flag--hungary, .flag--estonia, .flag--bolivia, .flag--poland, .flag--ukraine, .flag--denmark, .flag--iceland, .flag--norway, .flag--finland, .flag--sweden {
+  width: 12em;
+  height: 7.5em;
+  display: inline-block;
+  margin: 2em;
+  box-shadow: 1px 1px 1px #CCC;
+  transition: all .5s; }
+
+.flag--spain {
+  background: linear-gradient(#f6e5e5 25%, #f6f6dd 25%, #f6f6dd 75%, #f6e5e5 75%); }
+
+.flag--switzerland {
+  background: linear-gradient(#f6e5e5 20%, transparent 20%, transparent 80%, #f6e5e5 80%), linear-gradient(90deg, #f6e5e5 30%, transparent 30%, transparent 45%, #f6f6f6 45%, #f6f6f6 55%, transparent 55%, transparent 70%, #f6e5e5 70%), linear-gradient(#f6e5e5 42%, #f6f6f6 42%, #f6f6f6 58%, #f6e5e5 58%); }
+
+.flag--uk {
+  background: linear-gradient(90deg, transparent 46%, #f6e5e5 46%, #f6e5e5 56%, transparent 56%), linear-gradient(transparent 38%, #f6f6f6 38%, #f6f6f6 42%, #f6e5e5 42%, #f6e5e5 58%, #f6f6f6 58%, #f6f6f6 62%, transparent 62%), linear-gradient(90deg, transparent 44%, #f6f6f6 44%, #f6f6f6 46%, #f6e5e5 46%, #f6e5e5 56%, #f6f6f6 56%, #f6f6f6 58%, transparent 58%), linear-gradient(33deg, transparent 45%, #f6f6f6 45%, #f6f6f6 48%, #f6e5e5 48%, #f6e5e5 54%, #f6f6f6 54%, #f6f6f6 57%, transparent 57%), linear-gradient(-33deg, #e5e5f3 45%, #f6f6f6 45%, #f6f6f6 48%, #f6e5e5 48%, #f6e5e5 54%, #f6f6f6 54%, #f6f6f6 57%, #e5e5f3 57%); }
+
+.flag--japan {
+  background: radial-gradient(circle at 50% 50%, #f6e5e5 0%, #f6e5e5 30%, #f6f6f6 30%, #f6f6f6 100%); }
+
+.flag--usa {
+  position: relative;
+  background: linear-gradient(#bb133e 0%, #bb133e 7.69231%, #f6f6f6 7.69231%, #f6f6f6 15.38462%, #bb133e 15.38462%, #bb133e 23.07692%, #f6f6f6 23.07692%, #f6f6f6 30.76923%, #bb133e 30.76923%, #bb133e 38.46154%, #f6f6f6 38.46154%, #f6f6f6 46.15385%, #bb133e 46.15385%, #bb133e 53.84615%, #f6f6f6 53.84615%, #f6f6f6 61.53846%, #bb133e 61.53846%, #bb133e 69.23077%, #f6f6f6 69.23077%, #f6f6f6 76.92308%, #bb133e 76.92308%, #bb133e 84.61538%, #f6f6f6 84.61538%, #f6f6f6 92.30769%, #bb133e 92.30769%); }
+  .flag--usa::before {
+    box-sizing: border-box;
+    content: "\2605";
+    position: absolute;
+    text-align: left;
+    top: 0;
+    left: 0;
+    border: 0.38202em solid #3C3B6E;
+    display: inline-block;
+    width: 40%;
+    height: 53.84615%;
+    color: #f6f6f6;
+    background: #3C3B6E;
+    font-size: 0.38202em;
+    text-shadow: 0em 0em #f6f6f6, 2.10109em 0em #f6f6f6, 4.20218em 0em #f6f6f6, 6.30327em 0em #f6f6f6, 8.40437em 0em #f6f6f6, 10.50546em 0em #f6f6f6, 0.95504em 1.03144em #f6f6f6, 3.05613em 1.03144em #f6f6f6, 5.15722em 1.03144em #f6f6f6, 7.25832em 1.03144em #f6f6f6, 9.35941em 1.03144em #f6f6f6, 0em 2.06289em #f6f6f6, 2.10109em 2.06289em #f6f6f6, 4.20218em 2.06289em #f6f6f6, 6.30327em 2.06289em #f6f6f6, 8.40437em 2.06289em #f6f6f6, 10.50546em 2.06289em #f6f6f6, 0.95504em 3.09433em #f6f6f6, 3.05613em 3.09433em #f6f6f6, 5.15722em 3.09433em #f6f6f6, 7.25832em 3.09433em #f6f6f6, 9.35941em 3.09433em #f6f6f6, 0em 4.12578em #f6f6f6, 2.10109em 4.12578em #f6f6f6, 4.20218em 4.12578em #f6f6f6, 6.30327em 4.12578em #f6f6f6, 8.40437em 4.12578em #f6f6f6, 10.50546em 4.12578em #f6f6f6, 0.95504em 5.15722em #f6f6f6, 3.05613em 5.15722em #f6f6f6, 5.15722em 5.15722em #f6f6f6, 7.25832em 5.15722em #f6f6f6, 9.35941em 5.15722em #f6f6f6, 0em 6.18867em #f6f6f6, 2.10109em 6.18867em #f6f6f6, 4.20218em 6.18867em #f6f6f6, 6.30327em 6.18867em #f6f6f6, 8.40437em 6.18867em #f6f6f6, 10.50546em 6.18867em #f6f6f6, 0.95504em 7.22011em #f6f6f6, 3.05613em 7.22011em #f6f6f6, 5.15722em 7.22011em #f6f6f6, 7.25832em 7.22011em #f6f6f6, 9.35941em 7.22011em #f6f6f6, 0em 8.25156em #f6f6f6, 2.10109em 8.25156em #f6f6f6, 4.20218em 8.25156em #f6f6f6, 6.30327em 8.25156em #f6f6f6, 8.40437em 8.25156em #f6f6f6, 10.50546em 8.25156em #f6f6f6; }
+
+.flag--ireland {
+  background: linear-gradient(90deg, #c4e7c4 33.3%, #f6f6f6 33.3%, #f6f6f6 66.6%, orange 66.6%); }
+
+.flag--italy {
+  background: linear-gradient(90deg, #c4e7c4 33.3%, #f6f6f6 33.3%, #f6f6f6 66.6%, #f6e5e5 66.6%); }
+
+.flag--belgium {
+  background: linear-gradient(90deg, black 33.3%, #f6f6dd 33.3%, #f6f6dd 66.6%, #f6e5e5 66.6%); }
+
+.flag--france {
+  background: linear-gradient(90deg, #e5e5f3 33.3%, #f6f6f6 33.3%, #f6f6f6 66.6%, #f6e5e5 66.6%); }
+
+.flag--romania {
+  background: linear-gradient(90deg, #e5e5f3 33.3%, #f6f6dd 33.3%, #f6f6dd 66.6%, #f6e5e5 66.6%); }
+
+.flag--germany {
+  background: linear-gradient(-180deg, black 33.3%, #f6e5e5 33.3%, #f6e5e5 66.6%, gold 66.6%); }
+
+.flag--russia {
+  background: linear-gradient(-180deg, #f6f6f6 33.3%, #e5e5f3 33.3%, #e5e5f3 66.6%, #f6e5e5 66.6%); }
+
+.flag--bulgaria {
+  background: linear-gradient(-180deg, #f6f6f6 33.3%, green 33.3%, green 66.6%, #f6e5e5 66.6%); }
+
+.flag--netherlands {
+  background: linear-gradient(-180deg, #f6e5e5 33.3%, #f6f6f6 33.3%, #f6f6f6 66.6%, #e5e5f3 66.6%); }
+
+.flag--lithuania {
+  background: linear-gradient(-180deg, gold 33.3%, green 33.3%, green 66.6%, #f6e5e5 66.6%); }
+
+.flag--austria {
+  background: linear-gradient(-180deg, #f6e5e5 33.3%, #f6f6f6 33.3%, #f6f6f6 66.6%, #f6e5e5 66.6%); }
+
+.flag--hungary {
+  background: linear-gradient(-180deg, #f6e5e5 33.3%, #f6f6f6 33.3%, #f6f6f6 66.6%, green 66.6%); }
+
+.flag--estonia {
+  background: linear-gradient(-180deg, royalblue 33.3%, #132c76 33.3%, #132c76 66.6%, #f6f6f6 66.6%); }
+
+.flag--bolivia {
+  background: linear-gradient(-180deg, #f6e5e5 33.3%, #f6f6dd 33.3%, #f6f6dd 66.6%, green 66.6%); }
+
+.flag--poland {
+  background: linear-gradient(-180deg, #f6f6f6 50%, #f6e5e5 50%); }
+
+.flag--ukraine {
+  background: linear-gradient(-180deg, royalblue 50%, #f6f6dd 50%); }
+
+.flag--denmark {
+  background: linear-gradient(90deg, transparent 28%, #f6f6f6 28%, #f6f6f6 34%, transparent 34%), linear-gradient(transparent 42%, #f6e5e5 42%, #f6e5e5 46%, #f6f6f6 46%, #f6f6f6 58%, #f6e5e5 58%, #f6e5e5 62%, transparent 62%), linear-gradient(90deg, #f6e5e5 25%, #f6e5e5 25%, #f6e5e5 28%, #f6f6f6 28%, #f6f6f6 34%, #f6e5e5 34%, #f6e5e5 37%, #f6e5e5 37%); }
+
+.flag--iceland {
+  background: linear-gradient(90deg, transparent 28%, #f6e5e5 28%, #f6e5e5 34%, transparent 34%), linear-gradient(transparent 42%, #f6f6f6 42%, #f6f6f6 46%, #f6e5e5 46%, #f6e5e5 58%, #f6f6f6 58%, #f6f6f6 62%, transparent 62%), linear-gradient(90deg, #e5e5f3 25%, #f6f6f6 25%, #f6f6f6 28%, #f6e5e5 28%, #f6e5e5 34%, #f6f6f6 34%, #f6f6f6 37%, #e5e5f3 37%); }
+
+.flag--norway {
+  background: linear-gradient(90deg, transparent 28%, #e5e5f3 28%, #e5e5f3 34%, transparent 34%), linear-gradient(transparent 42%, #f6f6f6 42%, #f6f6f6 46%, #e5e5f3 46%, #e5e5f3 58%, #f6f6f6 58%, #f6f6f6 62%, transparent 62%), linear-gradient(90deg, #f6e5e5 25%, #f6f6f6 25%, #f6f6f6 28%, #e5e5f3 28%, #e5e5f3 34%, #f6f6f6 34%, #f6f6f6 37%, #f6e5e5 37%); }
+
+.flag--finland {
+  background: linear-gradient(90deg, transparent 28%, #e5e5f3 28%, #e5e5f3 34%, transparent 34%), linear-gradient(transparent 42%, #e5e5f3 42%, #e5e5f3 46%, #e5e5f3 46%, #e5e5f3 58%, #e5e5f3 58%, #e5e5f3 62%, transparent 62%), linear-gradient(90deg, #f6f6f6 25%, #e5e5f3 25%, #e5e5f3 28%, #e5e5f3 28%, #e5e5f3 34%, #e5e5f3 34%, #e5e5f3 37%, #f6f6f6 37%); }
+
+.flag--sweden {
+  background: linear-gradient(90deg, transparent 28%, #f6f6dd 28%, #f6f6dd 34%, transparent 34%), linear-gradient(transparent 42%, #f6f6dd 42%, #f6f6dd 46%, #f6f6dd 46%, #f6f6dd 58%, #f6f6dd 58%, #f6f6dd 62%, transparent 62%), linear-gradient(90deg, #e5e5f3 25%, #f6f6dd 25%, #f6f6dd 28%, #f6f6dd 28%, #f6f6dd 34%, #f6f6dd 34%, #f6f6dd 37%, #e5e5f3 37%); }
 
 body, html {
   height: 100%;
   background-color: white; }
+
+h1 {
+  color: white;
+  text-shadow: 1px 3px 9px #000;
+  letter-spacing: 3px; }
+
+header {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../img/bg4.jpg); }
+
+.header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 500px; }
+
+.header--item {
+  -ms-flex: 1 100%;
+      flex: 1 100%;
+  text-align: center;
+  margin: 20px; }
+
+.message--p {
+  font-size: 14px;
+  color: #e4e4e4;
+  letter-spacing: 3px;
+  padding-left: 10px;
+  text-shadow: 0px 1px 5px #000; }
+
+.add-city--message {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px; }
+
+.message--spinner {
+  color: #e4e4e4;
+  display: none; }
+
+.message--spinner__show {
+  display: block; }
+
+section {
+  background-color: #fafafa; }
 
 .section {
   display: -ms-flexbox;
@@ -27,7 +181,8 @@ body, html {
       align-items: flex-start;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  padding-top: 50px; }
 
 .section--item {
   background-color: #f6f6f6;
@@ -37,39 +192,13 @@ body, html {
   margin: 20px;
   line-height: 250px;
   border-radius: 20px;
-  box-shadow: 0px 0px 20px 0px #eee, inset 0px 0px 2px 0 #bdbdbd; }
-
-.header {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row-reverse;
-      flex-direction: row-reverse;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-align: center;
-      align-items: center; }
-
-.header--item {
-  -ms-flex: 1 100%;
-      flex: 1 100%;
-  text-align: center;
-  margin: 20px; }
-  .header--item img {
-    margin-left: 15px;
-    margin-right: 15px; }
-
-.header--item__search {
-  -ms-flex-order: 2;
-      order: 2; }
-
-.header--item__brand {
-  -ms-flex-order: 1;
-      order: 1; }
+  box-shadow: 0px 0px 4px 0px #e6e6e6, inset 0px 0px 20px 0px #ead6d6; }
 
 .weather-box {
-  line-height: normal; }
+  line-height: normal;
+  text-shadow: 0px 4px 8px #c4c4c4; }
+  .weather-box img {
+    width: 64px; }
 
 .weather-box--el {
   padding-top: 25px; }
@@ -91,13 +220,15 @@ body, html {
   font-weight: bold; }
 
 .weather-box--el__city {
+  letter-spacing: 3px;
+  font-size: 18px;
   font-weight: bold; }
 
 .weather-box--el__icon {
-  padding-top: 10px; }
+  padding-top: 15px; }
   .weather-box--el__icon img {
-    animation: iconAnimation 5s infinite;
-    animation-timing-function: linear; }
+    animation: iconAnimation 7s infinite;
+    animation-timing-function: ease-in-out; }
 
 .footer {
   text-align: center;
@@ -106,26 +237,13 @@ body, html {
   color: #8b8b8b;
   font-size: 12px;
   padding-top: 20px; }
+  .footer p {
+    margin: 0;
+    letter-spacing: 1px;
+    font-size: 12px; }
 
-.add-weather p {
-  margin: 20px; }
-
-.message--p {
-  font-size: 11px;
-  color: #9a9a9a;
-  letter-spacing: 3px;
-  padding-left: 10px; }
-
-.add-city--message {
-  display: -ms-flexbox;
-  display: flex;
-  margin: 20px; }
-
-.message--spinner {
-  display: none; }
-
-.message--spinner__show {
-  display: block; }
+svg:hover path {
+  fill: red; }
 
 @media (min-width: 768px) {
   .header {
@@ -138,12 +256,9 @@ body, html {
   .header--item {
     -ms-flex: 1;
         flex: 1;
-    text-align: center; }
-  .header--item__search {
-    -ms-flex-order: 1;
-        order: 1; }
-  .header--item__brand {
-    -ms-flex-order: 2;
-        order: 2; }
+    text-align: center;
+    padding-top: 200px; }
+  .input-group {
+    width: 50%; }
   .add-city {
     text-align: left; } }
