@@ -175,47 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
       $(DOMstrings.addCityBtn).removeClass("disabled");
     },
 
-      // background scroll effect module
-      backgroundScrollEffect: function (startPos, endPos, element){
-
-        // set windows values
-        var windowHeight = jQuery(window).height();
-        var windowScrollPosTop = jQuery(window).scrollTop();
-        var windowScrollPosBottom = windowHeight + windowScrollPosTop;
-        var windowWidth = jQuery(window).width();
-
-        // call function to set position on load
-        myScrollVal(startPos, endPos, element);
-
-        // event listener for scroll
-        $(window).scroll(function(){
-          windowHeight = jQuery(window).height();
-          windowScrollPosTop = jQuery(window).scrollTop();
-          windowScrollPosBottom = windowHeight + windowScrollPosTop;
-          windowWidth = jQuery(window).width();
-
-          // function (start position, end position, element)
-          myScrollVal(startPos, endPos, element);
-        });
-
-      // change background position function
-      function myScrollVal(startValue, endValue, object){
-
-        // set element position
-        var objectOffset = jQuery(object).offset();
-        var objectOffsetTop = objectOffset.top;
-        var objectOffsetBottom = objectOffsetTop + jQuery(object).outerHeight();
-
-        // if element is visible in window
-        if (windowScrollPosBottom > objectOffsetTop && windowScrollPosTop < (objectOffsetTop+$(object).height())){
-
-          // set background position
-          var scrollTop = $(this).scrollTop();
-          $(object).css('background-position', '50%' + Math.round((startValue+(((windowScrollPosBottom-objectOffsetTop)*(endValue-startValue))/(windowHeight+(objectOffsetBottom-objectOffsetTop))))) + '%');
-        };
-      };
-    },
-  // end background scroll module
 
     }
 
