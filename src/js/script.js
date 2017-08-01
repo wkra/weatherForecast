@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function (){
 
 
   // WEATHER CONTROLLER
@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var loadingFlag = 0;
 
     return {
-
       getLoadingFlag: function(){
         return loadingFlag;
       },
@@ -73,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       roundValues: function(val){
         return Math.round(val);
       },
+      
       locationSearch: function(name, callback){
 
         var cityName = name;
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var DOMstrings = UIController.getDOMstrings();
 
-    // new Location
+    // new location
     var searchLocation = function(cityName){
 
       // search location
@@ -219,12 +219,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // callback function for waiting for data
 
         if (data != false){
+          
         // get values from data
         var valuesFromData = weatherController.getValuesFromData(data);
 
         // add weather forecast
           UIController.addWheatherBox(valuesFromData, predef);
 
+          // predefined data are loaded
           if (weatherController.getLoadingFlag() == weatherController.getStartData().length){
 
             // print message loading completed
@@ -316,7 +318,11 @@ document.addEventListener("DOMContentLoaded", function () {
 //        console.log("App has started");
         setupEventListeners()
         startDataFunc(weatherController.getStartData());
-//        UIController.backgroundScrollEffect(-100, 100, '.bgphoto');
+        
+        // parallax init
+        $('.bgphoto').parallax({imageSrc: 'img/bg4.jpg',
+                                zIndex: 1,
+                                speed: 0.3});
       }
     }
 
@@ -326,9 +332,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // initialization app
   controller.init();
 
-  // parallax init
-  $('.bgphoto').parallax({imageSrc: 'img/bg4.jpg',
-                          zIndex: 1});
 
 
   // end DOMContentLoaded
