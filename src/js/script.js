@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //        console.log("App has started");
         setupEventListeners()
         startDataFunc(weatherController.getStartData());
-        UIController.backgroundScrollEffect(-100, 100, 'header');
+//        UIController.backgroundScrollEffect(-100, 100, '.bgphoto');
       }
     }
 
@@ -366,6 +366,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // initialization app
   controller.init();
+
+  // parallax init
+  $('.bgphoto').parallax({imageSrc: 'img/bg4.jpg',
+                          zIndex: 1});
+
 
   // end DOMContentLoaded
 

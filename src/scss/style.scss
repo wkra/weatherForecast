@@ -12,12 +12,11 @@ h1 {
   letter-spacing: 3px;
 }
 
-header {
-  background-position: 50% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(../img/bg4.jpg);
+.bgphoto {
+  min-height: 500px;
+  background: transparent;
 }
+
 .header {
   display:flex;
   flex-direction: row-reverse;
@@ -25,6 +24,8 @@ header {
   flex-wrap: wrap;
   align-items: center;
   height: 500px;
+  z-index: 10;
+  position: relative;
 }
 
 .header--item {
@@ -64,6 +65,7 @@ section{
   flex-flow: wrap;
   padding-bottom: 50px;
   padding-top: 50px;
+  min-height: 800px;
 }
 $section--item--val: 250px;
 .section--item {
@@ -129,10 +131,6 @@ $section--item--val: 250px;
   }
 
 }
-svg:hover path {
-  fill: red;
-}
-
 
 
 // IMPORT MEDIA
